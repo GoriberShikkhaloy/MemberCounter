@@ -27,7 +27,7 @@ async def main_MemberCounterMeta():
         try:
             while True:
                 print(text_2)
-                edit_message_text_teletips = "**EduMentors | সদস্যতা গণক**\n<i>**[দ্যা প্রফেসর ッ**  কর্তৃক তৈরী]</i>"
+                edit_message_text_teletips = "**EduMentors | সদস্যতা গণক**\n<i>[দ্যা প্রফেসর **ッ**  কর্তৃক তৈরী]</i>"
                 for CHANNEL_OR_GROUP in CHANNEL_OR_GROUP_LIST:
                     try:
                         get_chat_teletips = await MemberCounterMeta.get_chat(int(CHANNEL_OR_GROUP))   
@@ -38,7 +38,7 @@ async def main_MemberCounterMeta():
                         await asyncio.sleep(2)
                     except ValueError:
                         print(f'ID not found: {CHANNEL_OR_GROUP }. Skipping...')                       
-                edit_message_text_teletips += f"\n\n<i>৬০ মিনিট বা ১ ঘণ্টা পর পর স্বয়ংক্রিয়ভাবে রিফ্রেশ হবে!</i>"
+                edit_message_text_teletips += f"\n\n<i>মেসেজটি ৬০ মিনিট বা ১ ঘণ্টা পর পর স্বয়ংক্রিয়ভাবে আপডেট হবে!</i>"
                 try:
                     await MemberCounterMeta.edit_message_text(int(CHANNEL_OR_GROUP_ID), MESSAGE_ID, edit_message_text_teletips, disable_web_page_preview=True)
                 except Exception:
