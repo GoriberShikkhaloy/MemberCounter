@@ -27,30 +27,30 @@ async def main_MemberCounterMeta():
         try:
             while True:
                 print(text_2)
-                edit_message_text_teletips = "**📈 | Real-Time Member Counter** [ᵐᵉᵗᵃ](https://github.com/teletips/MemberCounterMeta#:~:text=Versions-,1.0%20Meta,-Credits)"
+                edit_message_text_teletips = "**EduMentors | সদস্যতা গণক**"
                 for CHANNEL_OR_GROUP in CHANNEL_OR_GROUP_LIST:
                     try:
                         get_chat_teletips = await MemberCounterMeta.get_chat(int(CHANNEL_OR_GROUP))   
                         if get_chat_teletips.type == "channel":
-                            edit_message_text_teletips += f"\n\n📣  **{get_chat_teletips.title}**\n👤 ├ <i>{get_chat_teletips.members_count} Subscribers</i>\n🔗 └ <i>[Link]({get_chat_teletips.invite_link})</i>"
+                            edit_message_text_teletips += f"\n\n **{get_chat_teletips.title}**\n ├ <i>{get_chat_teletips.members_count} জন সাবস্ক্রাইবার</i>\n └ <i>[চ্যানেলের লিংক]({get_chat_teletips.invite_link})</i>"
                         else:
-                            edit_message_text_teletips += f"\n\n💬  **{get_chat_teletips.title}**\n👤 ├ <i>{get_chat_teletips.members_count} Members</i>\n🔗 └ <i>[Link]({get_chat_teletips.invite_link})</i>" 
+                            edit_message_text_teletips += f"\n\n **{get_chat_teletips.title}**\n ├ <i>{get_chat_teletips.members_count} জন মেম্বার</i>\n └ <i>[গ্রুপের লিংক]({get_chat_teletips.invite_link})</i>" 
                         await asyncio.sleep(2)
                     except ValueError:
                         print(f'ID not found: {CHANNEL_OR_GROUP }. Skipping...')                       
-                edit_message_text_teletips += f"\n\n<i>Automatically refreshes every 15 minutes</i>"
+                edit_message_text_teletips += f"\n\n<i>৬০ মিনিট বা ১ ঘণ্টা পর পর স্বয়ংক্রিয়ভাবে রিফ্রেশ হবে!</i>"
                 try:
                     await MemberCounterMeta.edit_message_text(int(CHANNEL_OR_GROUP_ID), MESSAGE_ID, edit_message_text_teletips, disable_web_page_preview=True)
                 except Exception:
                     pass    
                 print(text_3)              
-                await asyncio.sleep(900) # 15 minutes = 900 seconds
+                await asyncio.sleep(3600) # 60 minutes = 3600 seconds
         except FloodWait as e:
             await asyncio.sleep(e.x)
 
 @MemberCounterMeta.on_message(filters.command("status", "!") & filters.me)
 async def alive(_, message: Message):
-    await message.edit("Your MemberCounter is alive!")
+    await message.edit("সদস্য গণক জাগ্রত আছে!")
     await asyncio.sleep(10)
     await message.delete()                   
                         
