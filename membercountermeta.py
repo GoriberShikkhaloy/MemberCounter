@@ -32,9 +32,9 @@ async def main_MemberCounterMeta():
                     try:
                         get_chat_teletips = await MemberCounterMeta.get_chat(int(CHANNEL_OR_GROUP))   
                         if get_chat_teletips.type == "channel":
-                            edit_message_text_teletips += f"\n\n **{get_chat_teletips.title}**\n  👥 <i>কোর্সটিতে যুক্ত আছেন: {get_chat_teletips.members_count} জন</i>"
+                            edit_message_text_teletips += f"\n\n **{get_chat_teletips.title}**\n  👥 কোর্সটিতে যুক্ত আছেন: **{get_chat_teletips.members_count}** জন"
                         else:
-                            edit_message_text_teletips += f"\n\n **{get_chat_teletips.title}**\n  👥 <i>কোর্সটিতে যুক্ত আছেন: {get_chat_teletips.members_count} জন</i>" 
+                            edit_message_text_teletips += f"\n\n **{get_chat_teletips.title}**\n  👥 কোর্সটিতে যুক্ত আছেন: **{get_chat_teletips.members_count}** জন" 
                         await asyncio.sleep(2)
                     except ValueError:
                         print(f'ID not found: {CHANNEL_OR_GROUP }. Skipping...')                       
