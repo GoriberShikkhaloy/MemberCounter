@@ -1,3 +1,3 @@
-text_1 = "Starting Member Counter Meta..."
-text_2 = "Automatically Refreshing..."
-text_3 = "Having a 15 Minutes Nap..."
+text_1 = "সদস্য গণনা শুরু হচ্ছে..."
+text_2 = "রিফ্রেশ করা হচ্ছে..."
+text_3 = "৬০ মিনিটের জন্য ঘুমিয়ে নিচ্ছি..."
